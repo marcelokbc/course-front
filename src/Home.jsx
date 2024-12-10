@@ -68,8 +68,22 @@ const Home = () => {
                 day: "2-digit",
               }).format(new Date(course.end_date))}
             </p>
-            <button onClick={() => handleEditClick(course)}>Edit</button>
-            <button onClick={() => deleteCourse(course.id)}>Delete</button>
+            <h3>Videos</h3>
+            {course.videos.map((video, index) => (
+              <div key={index}>
+                <p><strong>Title:</strong> {video.title}</p>
+                <p>
+                  <strong>URL:</strong>{" "}
+                  <a href={video.url} target="_blank" rel="noopener noreferrer">
+                    {video.url}
+                  </a>
+                </p>
+                <p><strong>Size:</strong> {video.size} MB</p>
+              </div>
+            ))}
+
+            <button onClick={() => handleEditClick(course)}>Editar</button>
+            <button onClick={() => deleteCourse(course.id)}>Excluir</button>
           </div>
         ))}
       </div>

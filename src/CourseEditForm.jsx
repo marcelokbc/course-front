@@ -23,9 +23,9 @@ const CourseEditForm = ({ course, onCourseUpdated }) => {
 
   return (
     <form onSubmit={handleSubmit} className="course-form">
-      <h2>Edit Course</h2>
+      <h2>Editar Curso</h2>
       <label>
-        Title:
+        Título:
         <input
           type="text"
           name="title"
@@ -35,7 +35,7 @@ const CourseEditForm = ({ course, onCourseUpdated }) => {
         />
       </label>
       <label>
-        Description:
+        Descrição:
         <textarea
           name="description"
           value={formData.description}
@@ -44,7 +44,7 @@ const CourseEditForm = ({ course, onCourseUpdated }) => {
         ></textarea>
       </label>
       <label>
-        End Date:
+        Data de Término:
         <input
           type="date"
           name="end_date"
@@ -53,7 +53,7 @@ const CourseEditForm = ({ course, onCourseUpdated }) => {
           required
         />
       </label>
-      <button type="submit">Save Changes</button>
+      <button type="submit">Salvar</button>
     </form>
   );
 };
