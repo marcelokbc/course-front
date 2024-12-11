@@ -54,7 +54,7 @@ const Home = () => {
       ) : (
         <CourseForm onCourseAdded={fetchCourses} />
       )}
-      <h1>Courses</h1>
+      <h1>Cursos Atuais ({courses.length})</h1>
       <div className="grid">
         {courses.map((course) => (
           <div key={course.id} className="card">
@@ -81,9 +81,10 @@ const Home = () => {
                 <p><strong>Size:</strong> {video.size} MB</p>
               </div>
             ))}
-
-            <button onClick={() => handleEditClick(course)}>Editar</button>
-            <button onClick={() => deleteCourse(course.id)}>Excluir</button>
+            <div className="actions">
+              <button onClick={() => handleEditClick(course)}>Editar</button>
+              <button onClick={() => deleteCourse(course.id)}>Excluir</button>
+            </div>
           </div>
         ))}
       </div>
